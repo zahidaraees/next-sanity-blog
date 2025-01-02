@@ -1,6 +1,7 @@
 import Link from "next/link"; // Import Link from Next.js
-import "../../globals.css"; // If located two levels up
-import "./globals.css"; // If located in the same folder
+//import "../../globals.css"; // If located two levels up
+//import "./globals.css"; // If located in the same folder
+import "@/app/globals.css";
 
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -85,20 +86,7 @@ export default async function RootLayout({
                   <h3 className="mb-10 text-center text-4xl font-bold leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-5xl">
                     Built For Milestone 3
                   </h3>
-                  <div className="flex flex-col items-center justify-center lg:w-1/2 lg:flex-row lg:pl-4">
-                    <Link
-                      href="https://nextjs.org/docs"
-                      className="mx-3 mb-6 border border-black bg-black py-3 px-12 font-bold text-white transition-colors duration-200 hover:bg-white hover:text-black lg:mb-0 lg:px-8"
-                    >
-                      Read Documentation
-                    </Link>
-                    <Link
-                      href="https://github.com/vercel/next.js/tree/canary/examples/cms-sanity"
-                      className="mx-3 font-bold hover:underline"
-                    >
-                      View on GitHub
-                    </Link>
-                  </div>
+                  
                 </div>
               )}
             </div>
