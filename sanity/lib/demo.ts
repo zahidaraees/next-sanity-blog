@@ -1,5 +1,5 @@
 /**
- * Demo data used as placeholders and initial values for the blog
+ * Title for the Blog
  */
 
 export const title = "Info City Hub";

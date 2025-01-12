@@ -1,8 +1,8 @@
 import Link from "next/link"; // Import Link from Next.js
 //import "../../globals.css"; // If located two levels up
 //import "./globals.css"; // If located in the same folder
-import "@/app/globals.css";
 
+import "@/app/globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -21,6 +21,10 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import Comment from "@/sanity/schemas/documents/comment";
+import Comment_ from "postcss/lib/comment";
+import { CommentInput } from "sanity";
+import CommentSection from "./posts/[slug]/commentsection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch({
@@ -72,7 +76,7 @@ export default async function RootLayout({
     <html lang="en" className={`${inter.variable} bg-white text-black`}>
       <body>
         <section className="min-h-screen">
-          {isDraftMode && <AlertBanner />}
+          {<AlertBanner />}
           <main>{children}</main>
           <footer className="bg-accent-1 border-accent-2 border-t">
             <div className="container mx-auto px-5">
@@ -86,14 +90,22 @@ export default async function RootLayout({
                   <h3 className="mb-10 text-center text-4xl font-bold leading-tight tracking-tighter lg:mb-0 lg:w-1/2 lg:pr-4 lg:text-left lg:text-5xl">
                     Built For Milestone 3
                   </h3>
-                  
                 </div>
               )}
             </div>
+            
+            
           </footer>
         </section>
         {isDraftMode && <VisualEditing />}
+        
+
+        
         <SpeedInsights />
+        
+
+        
+      
       </body>
     </html>
   );
