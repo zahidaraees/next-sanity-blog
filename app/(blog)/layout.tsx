@@ -24,7 +24,6 @@ import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import Comment from "@/sanity/schemas/documents/comment";
 import Comment_ from "postcss/lib/comment";
 import { CommentInput } from "sanity";
-import CommentSection from "./posts/[slug]/commentsection";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch({
@@ -93,19 +92,11 @@ export default async function RootLayout({
                 </div>
               )}
             </div>
-            
-            
           </footer>
         </section>
         {isDraftMode && <VisualEditing />}
-        
 
-        
         <SpeedInsights />
-        
-
-        
-      
       </body>
     </html>
   );
