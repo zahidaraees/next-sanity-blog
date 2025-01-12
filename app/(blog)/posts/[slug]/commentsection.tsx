@@ -8,7 +8,7 @@ const client = createClient({
   token: "skV43A8v8fEbjh0gWCXGx0oLGGXpMaItMkYii64o81X77SQ4wioIOQhCG4vKIYgTNgHe5dBNp8U8F7x9mmVCJhMFIK9KS4yTSVl0LkcmxVBCUiaaT3raVk1lpxQ1NGYX7W12q1yYiyVzlSPDx6ei29dqsJbQLJxMYGdndZeG6IrXDeG3byeY", // Replace with a real token
 });
 
-export default async function handler(req, res) {
+export default async function handler(req:any, res:any) {
   if (req.method === "GET") {
     const { postId } = req.query;
 
